@@ -11,6 +11,6 @@ COPY --from=BUILDER /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 WORKDIR /app
-COPY ./src .
+COPY ./app .
 
 CMD faust -A main worker -l info

@@ -31,7 +31,7 @@ services:
     #API
     api:
       build:
-          context: ./api
+          context: ./api-project
           dockerfile: Dockerfile
       environment:
         KAFKA_SERVER_URL: kafka:9092
@@ -46,7 +46,7 @@ services:
     # BACKEND SERVICES
     kitchen:
       build:
-          context: ./services/kitchen
+          context: ./services/kitchen-project
           dockerfile: Dockerfile
       environment:
         KAFKA_SERVER_URL: kafka:9092
@@ -55,7 +55,7 @@ services:
           condition: service_healthy
     announcement:
       build:
-          context: ./services/announcement
+          context: ./services/announcement-project
           dockerfile: Dockerfile
       environment:
         KAFKA_SERVER_URL: kafka:9092
